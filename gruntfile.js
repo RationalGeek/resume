@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 	  },
 	  
 	jade: {
-	  compile: {
+	  main: {
 		options: {
 		  data: {
 			debug: false
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 	},
 	
 	less: {
-	  development: {
+	  main: {
 		options: {
 		  paths: [ "content/sytle" ]
 		},
@@ -75,7 +75,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
-  // Default task(s).
-  // grunt.registerTask('default', ['uglify']);
 
+	grunt.registerTask('build', ['copy','less','jade']);
+	grunt.registerTask('release', ['build','gh-pages']);
+	
+    // grunt.registerTask('default', [...]);
 };
