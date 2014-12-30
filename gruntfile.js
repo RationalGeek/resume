@@ -18,12 +18,26 @@ module.exports = function(grunt) {
 		  base: 'dist'
 		},
 		src: ['**']
+	  },
+	  
+	jade: {
+	  compile: {
+		options: {
+		  data: {
+			debug: false
+		  }
+		},
+		files: {
+		  "dist/index.html": ["content/main.jade"]
+		}
 	  }
+	},
   });
 
   // Load the plugin that provides the "uglify" task.
   //grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
   // Default task(s).
   // grunt.registerTask('default', ['uglify']);
