@@ -32,12 +32,27 @@ module.exports = function(grunt) {
 		}
 	  }
 	},
+	
+	  bump: {
+		options: {
+		  files: ['package.json'],
+		  updateConfigs: [],
+			commit: true,
+			commitMessage: 'Updated version to %VERSION%',
+		  globalReplace: false,
+		  push: false,
+		  createTag: false,
+		  
+		  
+		}
+	  },
   });
 
   // Load the plugin that provides the "uglify" task.
   //grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-bump');
 
   // Default task(s).
   // grunt.registerTask('default', ['uglify']);
