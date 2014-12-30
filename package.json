@@ -21,7 +21,7 @@
     "grunt-contrib-less": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-gh-pages": "^0.9.1",
-    "node-static": "^0.7.6",
+    "node-static": "^0.7.6"
   },
   "repository": {
     "type": "git",
