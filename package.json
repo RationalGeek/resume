@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "bootstrap": "^3.3.1",
     "grunt": "^0.4.5",
