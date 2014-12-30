@@ -4,6 +4,9 @@
   "description": "",
   "homepage": "https://github.com/RationalGeek/resume",
   "license": "",
+  "scripts": {
+    "start": "node app.js"
+  },
   "version": "0.0.2",
   "dependencies": {
     "grunt": "^0.4.5",
@@ -15,7 +18,9 @@
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-jade": "^0.14.0",
     "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-gh-pages": "^0.9.1",
+    "node-static": "^0.7.6",
     "normalize.css": "^3.0.2"
   },
   "repository": {

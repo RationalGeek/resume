@@ -2,16 +2,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    // pkg: grunt.file.readJSON('package.json'),
-    // uglify: {
-      // options: {
-        // banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      // },
-      // build: {
-        // src: 'src/<%= pkg.name %>.js',
-        // dest: 'build/<%= pkg.name %>.min.js'
-      // }
-    // }
+    pkg: grunt.file.readJSON("package.json"),
 	
 	'gh-pages': {
 		options: {
@@ -24,7 +15,8 @@ module.exports = function(grunt) {
 	  main: {
 		options: {
 		  data: {
-			debug: false
+			debug: false,
+			version: '<%= pkg.version %>',
 		  }
 		},
 		files: {
@@ -47,14 +39,12 @@ module.exports = function(grunt) {
 	  bump: {
 		options: {
 		  files: ['package.json'],
-		  updateConfigs: [],
-			commit: true,
-			commitMessage: 'Updated version to %VERSION%',
+		  updateConfigs: ['pkg'],
+		  commit: true,
+		  commitMessage: 'Updated version to %VERSION%',
 		  globalReplace: false,
 		  push: false,
 		  createTag: false,
-		  
-		  
 		}
 	  },
 	  
@@ -65,6 +55,16 @@ module.exports = function(grunt) {
 			],
 		  },
 		},
+		
+	watch: {
+	  scripts: {
+		files: ['**/*.jade','**/*.less','**/*.css','**/*.js'],
+		tasks: ['build'],
+		options: {
+		  spawn: false,
+		},
+	  },
+	},
   });
 
   // Load the plugin that provides the "uglify" task.
@@ -74,10 +74,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
 
 	grunt.registerTask('build', ['copy','less','jade']);
-	grunt.registerTask('release', ['build','gh-pages']);
+	grunt.registerTask('release', ['bump','build','gh-pages']);
 	
     // grunt.registerTask('default', [...]);
 };
