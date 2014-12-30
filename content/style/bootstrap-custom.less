@@ -1,0 +1,15 @@
+// http://stackoverflow.com/questions/19267338/incorporate-custom-bootstrap-build-into-project-grunt-task
+
+// import the default bootstrap variables...
+@import "../../node_modules/bootstrap/less/variables.less";
+
+// custom variable overrides go BEFORE bootstrap.less
+// this is useful for changing any variables that influence the way bootstrap is built
+
+//@brand-success:         #f00;
+
+// load the main bootstrap file
+@import "../../node_modules/bootstrap/less/bootstrap.less";
+
+// additional components overrides go AFTER bootstrap.less
+// this is useful for overriding bootstrap styles that are not configurable as variables

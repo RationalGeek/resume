@@ -8,18 +8,16 @@ html.no-js
     meta(name='viewport', content='width=device-width, initial-scale=1')
     block title
         title Default Title
-    link(rel='stylesheet', href='normalize.css')
+    link(rel='stylesheet', href='bootstrap.css')
     link(rel='stylesheet', href='main.css')
     //-script(src='js/vendor/modernizr-2.7.1.min.js')
   body
-    #header @RationalGeek Justin Kohlhepp Résumé
+    #header.jumbotron @RationalGeek Justin Kohlhepp Résumé
   
     block content
     
     #footer
         #version Version: #{version}
 
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-    //-script window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')
-    //-script(src='js/plugins.js')
-    //-script(src='js/script.js')
+    script(src='//code.jquery.com/jquery-1.11.2.min.js')
+    script(src='bootstrap.min.js')

@@ -31,7 +31,8 @@ module.exports = function(grunt) {
           paths: [ "content/sytle" ]
         },
         files: {
-          "dist/main.css": "content/style/main.less"
+          "dist/bootstrap.css": "content/style/bootstrap-custom.less",
+          "dist/main.css": "content/style/main.less",
         }
       },
     },
@@ -51,7 +52,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          { expand: true, src: ['node_modules/normalize.css/normalize.css'], dest: 'dist/', flatten: true },
+          { expand: true, src: ['node_modules/bootstrap/dist/js/bootstrap.min.js'], dest: 'dist/', flatten: true },
         ],
       },
     },
