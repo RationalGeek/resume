@@ -33,6 +33,17 @@ module.exports = function(grunt) {
 	  }
 	},
 	
+	less: {
+	  development: {
+		options: {
+		  paths: [ "content/sytle" ]
+		},
+		files: {
+		  "dist/main.css": "content/style/main.less"
+		}
+	  },
+	},
+	
 	  bump: {
 		options: {
 		  files: ['package.json'],
@@ -46,6 +57,14 @@ module.exports = function(grunt) {
 		  
 		}
 	  },
+	  
+		copy: {
+		  main: {
+			files: [
+			  { expand: true, src: ['node_modules/normalize.css/normalize.css'], dest: 'dist/', flatten: true },
+			],
+		  },
+		},
   });
 
   // Load the plugin that provides the "uglify" task.
@@ -53,6 +72,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-bump');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
   // grunt.registerTask('default', ['uglify']);
