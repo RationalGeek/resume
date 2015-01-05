@@ -9,10 +9,11 @@ html.no-js
     block title
         title Default Title
     link(rel='stylesheet', href='bootstrap.css')
-    link(rel='stylesheet', href='main.css')
+    link(rel='stylesheet', href='layout.css')
+    block css
     //-script(src='js/vendor/modernizr-2.7.1.min.js')
   body
-    #header.jumbotron @RationalGeek Justin Kohlhepp Résumé
+    #header.jumbotron @RationalGeek Justin Kohlhepp
   
     block content
     
@@ -21,3 +22,4 @@ html.no-js
 
     script(src='//code.jquery.com/jquery-1.11.2.min.js')
     script(src='bootstrap.min.js')
+    block script
