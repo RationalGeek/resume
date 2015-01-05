@@ -60,7 +60,7 @@ module.exports = function(grunt) {
     
     watch: {
       scripts: {
-        files: ['**/*.jade','**/*.less','**/*.css','**/*.js'],
+        files: ['content/**/*.jade','content/style/**/*.less','*.js','content/scripts/**/*.js'],
         tasks: ['build'],
         options: {
           spawn: false,
