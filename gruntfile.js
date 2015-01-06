@@ -54,6 +54,7 @@ module.exports = function(grunt) {
       main: {
         files: [
           { expand: true, src: ['node_modules/bootstrap/dist/js/bootstrap.min.js'], dest: 'dist/', flatten: true },
+          { expand: true, src: ['content/scripts/main.js'], dest: 'dist/', flatten: true },
         ],
       },
     },
