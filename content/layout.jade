@@ -13,9 +13,12 @@ html.no-js
     block css
     //-script(src='js/vendor/modernizr-2.7.1.min.js')
   body
-    #header.jumbotron @RationalGeek Justin Kohlhepp
+    #header
+      .majorheading Justin Kohlhepp
+      .subheading IT Leader &amp; Technologist
   
-    block content
+    #content
+      block content
     
     #footer
         #version Version: #{version}
